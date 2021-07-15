@@ -1,9 +1,9 @@
 {
-  "name": "styled-by",
+  "name": "tailedjs",
   "version": "0.3.0",
-  "description": "Simple and powerful lib to handle styled props in your components",
+  "description": "Handle class names with props handler support",
   "main": "dist/index.js",
-  "repository": "github.com/brunobertolini/styled-by",
+  "repository": "github.com/brunobertolini/tailed",
   "license": "MIT",
   "author": {
     "name": "Bruno Bertolini",
@@ -21,19 +21,25 @@
     "build": "yarn tsc"
   },
   "files": [
-    "dist/"
+    "dist/",
+    "package.json",
+    "README.md"
   ],
   "keywords": [
     "react",
     "css",
     "css-in-js",
     "styled-components",
+    "tailwind",
+    "tailwindcss",
+    "classnames",
     "props"
   ],
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@types/jest": "^26.0.24",
+    "@types/react": "^17.0.14",
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-json": "^3.0.0",
