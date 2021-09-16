@@ -1,13 +1,16 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "strict": true,
-        "jsx": "react",
-        "outDir": "./dist",
-    },
-    "include": [
-        "./src"
-      ],
-      "exclude": ["node_modules", "**/*.spec.ts"]
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "jsx": "react",
+    "outDir": "./dist",
+  },
+  "include": [
+    "./src"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/?(*.)(spec|test).{js,jsx,ts,tsx}"
+  ]
 }
