@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "description": "Handle class names with props handler support",
   "main": "dist/index.js",
-  "repository": "github.com/brunobertolini/tailed",
+  "repository": "git@github.com:brunobertolini/tailed.git",
   "license": "MIT",
   "author": {
     "name": "Bruno Bertolini",
@@ -18,7 +18,9 @@
     "format": "yarn fix:format 'packages/**/*.(js|ts|md|json)'",
     "lint": "yarn fix:lint 'packages/**/*.{js,ts,json}'",
     "test": "yarn jest",
-    "build": "yarn tsc"
+    "build": "yarn tsc",
+    "prerelease": "yarn build",
+    "release": " yarn semantic-release"
   },
   "files": [
     "dist/",
@@ -38,6 +40,8 @@
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.1",
     "@types/jest": "^27.0.1",
     "@types/react": "^17.0.21",
     "eslint": "^7.32.0",
@@ -49,6 +53,7 @@
     "lint-staged": "^11.1.2",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.4.1",
+    "semantic-release": "^17.4.7",
     "ts-jest": "^27.0.5",
     "typescript": "^4.4.3"
   },
