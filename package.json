@@ -18,7 +18,7 @@
     "format": "yarn fix:format 'packages/**/*.(js|ts|md|json)'",
     "lint": "yarn fix:lint 'packages/**/*.{js,ts,json}'",
     "test": "yarn jest",
-    "build": "yarn tsc",
+    "build": "rm -Rf dist && yarn tsc",
     "prerelease": "yarn build",
     "release": " yarn semantic-release"
   },

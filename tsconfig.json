@@ -4,6 +4,7 @@
     "module": "commonjs",
     "strict": true,
     "jsx": "react",
+    "declaration": true,
     "outDir": "./dist",
   },
   "include": [
@@ -11,6 +12,9 @@
   ],
   "exclude": [
     "node_modules",
-    "**/?(*.)(spec|test).{js,jsx,ts,tsx}"
+    "**/*.test.js",
+    "**/*.test.jsx",
+    "**/*.test.ts",
+    "**/*.test.tsx",
   ]
 }
