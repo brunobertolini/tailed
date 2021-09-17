@@ -1,5 +1,5 @@
 {
-  "name": "tailedjs",
+  "name": "tailed-js",
   "version": "0.3.0",
   "description": "Handle class names with props handler support",
   "main": "dist/index.js",
