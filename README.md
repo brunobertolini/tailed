@@ -92,3 +92,23 @@ const classNames = tail`
   })}
 `
 ```
+
+## VS Code IntelliSense autocomplete
+
+You can add these settings on your user config:
+
+```json
+"editor.quickSuggestions": {
+  "strings": true
+},
+"tailwindCSS.experimental.classRegex" : [
+  "tailed`([^`]*)",
+  "tailed\\(.*?\\)`([^`]*)",
+  "tail`([^`]*)"
+],
+// if you're using typescript
+"tailwindCSS.includeLanguages" : {
+  "typescriptreact" : "javascript",
+  "typescript" : "javascript"
+}
+```
