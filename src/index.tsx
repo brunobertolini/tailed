@@ -20,11 +20,8 @@ export const tail = (str: Utility, ...args: Fragment[]) =>
     )
 
 export const tailed = (componentName: ComponentOrTag) =>
-  (strs: Utility, ...args: [Fragment]) => ({ className = '', children, ...props }: Props) => {
-    const Component = typeof componentName === 'string'
-      ? `${componentName}`
-      : componentName
-
+  (strs: Utility, ...args: [Fragment]) => ({ className = '', as: useAs = componentName, children, ...props }: Props) => {
+    const Component = typeof useAs === 'string' ? `${useAs}` : useAs
     const names = tail(strs, ...args)(props)
 
     return (

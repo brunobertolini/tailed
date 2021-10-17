@@ -35,6 +35,20 @@ const App = () => (
 
 ```
 
+### Using "as" prop
+
+Like styled-components, you can add `as` prop to use a diferent base component:
+
+```js
+const Button = tailed('button')``
+
+// In this case, the rendered element will be an <a> tag instead of <button>.
+<Button as="a" />
+
+// There, you get AnotherComponent rendered instead of <button> tag
+<Button as={AnotherComponent}>
+```
+
 ## Using without React
 
 You can use this lib with a more independent way, importing `tail` insteadof `tailed`.
