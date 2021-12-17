@@ -6,6 +6,20 @@ Tailed is a tiny lib to add styled-components syntax like, with suport to condit
 
 It's was initally be created to work with tailwindcss and avoid class mess inside react components without need a  build process, but it's can used with any framework (maybe I need split in two packages later).
 
+## Installing
+
+Using npm:
+
+```bash
+$ npm install tailed-js
+```
+
+Using yarn:
+
+```bash
+$ yarn add tailed-js
+```
+
 ## Usage
 
 Tailed works like styled-components, but, with class names instead of css props.
