@@ -58,10 +58,8 @@ var tailed = function (componentName) {
             args[_i - 1] = arguments[_i];
         }
         return function (_a) {
-            var _b = _a.className, className = _b === void 0 ? '' : _b, children = _a.children, props = __rest(_a, ["className", "children"]);
-            var Component = typeof componentName === 'string'
-                ? "" + componentName
-                : componentName;
+            var _b = _a.className, className = _b === void 0 ? '' : _b, _c = _a.as, useAs = _c === void 0 ? componentName : _c, children = _a.children, props = __rest(_a, ["className", "as", "children"]);
+            var Component = typeof useAs === 'string' ? "" + useAs : useAs;
             var names = exports.tail.apply(void 0, __spreadArray([strs], args, false))(props);
             return (React.createElement(Component, __assign({}, props, { className: names + " " + className }), children));
         };

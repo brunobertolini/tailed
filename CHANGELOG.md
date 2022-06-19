@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/brunobertolini/tailed/compare/v1.0.0...v1.1.0) (2022-06-19)
+
+
+### Features
+
+* add 'as' prop to use instead of default element/component ([5d00a84](https://github.com/brunobertolini/tailed/commit/5d00a84886073adcf5390852f039faf433e7e758))
+
 # 1.0.0 (2021-09-17)
 
 
