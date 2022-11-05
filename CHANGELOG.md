@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/brunobertolini/tailed/compare/v1.1.0...v1.1.1) (2022-11-05)
+
+
+### Bug Fixes
+
+* rest params typing ([44ebd91](https://github.com/brunobertolini/tailed/commit/44ebd9143987da5484783691f763c6de45c1b448))
+
 # [1.1.0](https://github.com/brunobertolini/tailed/compare/v1.0.0...v1.1.0) (2022-06-19)
 
 
