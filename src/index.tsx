@@ -9,7 +9,8 @@ type Utility = TemplateStringsArray | string[]
 const byProps = (fragment: Fragment = '', props?: Props) =>
   (typeof fragment === 'function' ? fragment(props) : fragment) || ''
 
-export const tail = (str: Utility, ...args: Fragment[]) =>
+export const tail =
+  (str: Utility, ...args: Fragment[]) =>
   (props?: Props) =>
     str.reduce(
       (memo, current, index) =>
@@ -19,8 +20,15 @@ export const tail = (str: Utility, ...args: Fragment[]) =>
       ''
     )
 
-export const tailed = (componentName: ComponentOrTag) =>
-  (strs: Utility, ...args: [Fragment]) => ({ className = '', as: useAs = componentName, children, ...props }: Props) => {
+export const tailed =
+  (componentName: ComponentOrTag) =>
+  (strs: Utility, ...args: Fragment[]) =>
+  ({
+    className = '',
+    as: useAs = componentName,
+    children,
+    ...props
+  }: Props) => {
     const Component = typeof useAs === 'string' ? `${useAs}` : useAs
     const names = tail(strs, ...args)(props)
 
