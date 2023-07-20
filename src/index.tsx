@@ -1,36 +1,37 @@
-import * as React from 'react'
+import * as React from 'react';
 
-type Props = { [key: string]: any }
-type ComponentOrTag = string | React.ComponentType<Props>
-type PropsHandler = (props?: Props) => string
-type Fragment = string | PropsHandler
+type Props<T> = { [key: string]: any } & T;
+type ComponentOrTag<T> = string | React.ComponentType<Props<T>>
+type PropsHandler<T> = (props: Props<T>) => string | undefined | boolean
+type Fragment<T> = string | PropsHandler<T>
 type Utility = TemplateStringsArray | string[]
 
-const byProps = (fragment: Fragment = '', props?: Props) =>
-  (typeof fragment === 'function' ? fragment(props) : fragment) || ''
+const byProps = <T,>(fragment: Fragment<T> = '', props: Props<T>) =>
+	(typeof fragment === 'function' ? fragment(props) : fragment) || ''
 
 export const tail =
-  (str: Utility, ...args: Fragment[]) =>
-  (props?: Props) =>
+  <T,>(str: Utility, ...args: Fragment<T>[]) =>
+  (props: Props<T>) =>
     str.reduce(
       (memo, current, index) =>
-        `${memo}${current}${byProps(args[index], props)}`
+        `${memo}${current}${byProps<T>(args[index], props)}`
           .trim()
           .replace(/\s{2,}/g, ' '),
       ''
-    )
+    );
 
 export const tailed =
-  (componentName: ComponentOrTag) =>
-  (strs: Utility, ...args: Fragment[]) =>
+  <T,>(componentName: ComponentOrTag<T>) =>
+  (strs: Utility, ...args: Fragment<T>[]) =>
   ({
     className = '',
     as: useAs = componentName,
     children,
     ...props
-  }: Props) => {
+  }: Props<T>) => {
+
     const Component = typeof useAs === 'string' ? `${useAs}` : useAs
-    const names = tail(strs, ...args)(props)
+    const names = tail<T>(strs, ...args)(props as Props<T>)
 
     return (
       <Component {...props} className={`${names} ${className}`}>
