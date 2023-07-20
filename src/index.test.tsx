@@ -9,7 +9,7 @@ describe('Class names handler', () => {
       c
       d
     `
-    expect(classNames()).toBe('a b c d')
+    expect(classNames({})).toBe('a b c d')
   })
 
   it('should return a conditional list of class names', () => {
